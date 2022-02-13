@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="859.0" prefWidth="1526.0" style="-fx-background-color: linear-gradient(to right, #00B4DB 10%, #0083B0 100%);" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schedule.controller.LoginController">
+   <children>
+      <ImageView fitHeight="871.0" fitWidth="758.0" layoutX="-190.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Style/Login_page.png" />
+         </image></ImageView>
+      <Pane layoutX="163.0" layoutY="75.0" prefHeight="691.0" prefWidth="1226.0" style="-fx-background-color: &quot;FFFF&quot;; -fx-background-radius: 50;">
+         <children>
+            <Label layoutX="756.0" layoutY="1.0" prefHeight="690.0" prefWidth="472.0" style="-fx-background-color: E2EEF5; -fx-background-radius: 0 50 50 0;" />
+            <ImageView fitHeight="691.0" fitWidth="911.0" layoutX="296.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Style/Login_page2.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="104.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold; -fx-font-family: fantasy; -fx-font-style: normal;" text="Login">
+               <font>
+                  <Font name="Arial Bold" size="40.0" />
+               </font>
+            </Text>
+            <TextField fx:id="nis" layoutX="103.0" layoutY="256.0" prefHeight="52.0" prefWidth="306.0" promptText="NIS" style="-fx-background-color: #FFFF; -fx-border-color: #BCBEC0; -fx-border-radius: 30; -fx-padding: 0 0 0 13;">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Text layoutX="107.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: gilroy; -fx-font-size: 15;" text="NISN" />
+            <Text layoutX="107.0" layoutY="352.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: gilroy; -fx-font-size: 15;" text="Password" />
+            <PasswordField fx:id="password" layoutX="103.0" layoutY="371.0" prefHeight="52.0" prefWidth="306.0" promptText="Password" style="-fx-background-color: #FFFF; -fx-border-color: #BCBEC0; -fx-border-radius: 30; -fx-padding: 0 0 0 13;">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </PasswordField>
+            <Button id="submit" layoutX="103.0" layoutY="466.0" mnemonicParsing="false" onAction="#UserLogin" prefHeight="39.0" prefWidth="306.0" style="-fx-background-color: #A93159; -fx-background-radius: 30; -fx-font-weight: bold;" text="Masuk" textFill="WHITE" />
+            <Label fx:id="status" alignment="CENTER" layoutX="102.0" layoutY="432.0" prefHeight="28.0" prefWidth="306.0" textFill="RED" />
+            <HBox fx:id="asd" layoutX="188.0" layoutY="14.0" prefHeight="100.0" prefWidth="200.0" />
+         </children>
+      </Pane>
+   </children>
+</Pane>
