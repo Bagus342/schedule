@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class User {
 
-    public String nama_user = null;
+    public String nama_user;
     public String kelas;
 
     public User(String nama_user, String kelas) {

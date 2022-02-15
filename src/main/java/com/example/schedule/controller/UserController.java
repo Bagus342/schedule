@@ -31,24 +31,9 @@ import java.util.ResourceBundle;
 
 public class UserController implements Initializable {
     DataUser dataUser = null;
-    @FXML
-    private VBox items = new VBox();
-    @FXML
-    private HBox header = new HBox();
-    @FXML
-    private HBox table = new HBox();
-    @FXML
-    private Button btn_search;
-    @FXML
-    private Label text_nis;
+
     @FXML
     private TextField filter_data;
-    @FXML
-    private Button btn_tambah;
-    @FXML
-    private Pane addScene = new Pane();
-    @FXML
-    private Pane parent = new Pane();
 
     @FXML
     private TableView<DataUser> userTable;
@@ -262,6 +247,11 @@ public class UserController implements Initializable {
     public void jadwalScene(ActionEvent event) throws IOException {
         Main main = new Main();
         main.changeScene("data/schedule_management.fxml");
+    }
+
+    public void jurusanScene(ActionEvent event) throws IOException {
+        Main main = new Main();
+        main.changeScene("data/data_jurusan.fxml");
     }
 
     public void kelasScene(ActionEvent event) throws IOException {

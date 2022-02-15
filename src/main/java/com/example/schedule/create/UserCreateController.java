@@ -63,16 +63,17 @@ public class UserCreateController implements Initializable {
         connection = SqliteConnection.Connector();
         String query = "insert into tb_user (nama_user, nis, kelas, password, role) values (?, ?, ?, ?, ?)";
         String validate = "select nis from tb_user where nis = ? ";
-        try {
-            if (nama_user.getText().isEmpty() || nis.getText().isEmpty() || nama_kelas.getValue() == null || password.getText().isEmpty() || role.getValue() == null){
+        if (role.getValue().equals("Admin")) {
+            if (nama_user.getText().isEmpty() || nis.getText().isEmpty() || password.getText().isEmpty() || role.getValue() == null) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText(null);
                 alert.setContentText("Kolom tidak boleh kosong !!");
                 alert.showAndWait();
             } else {
-                var validation = connection.prepareStatement(validate);
-                validation.setString(1, nis.getText());
-                resultSet = validation.executeQuery();
+                try {
+                    var validation = connection.prepareStatement(validate);
+                    validation.setString(1, nis.getText());
+                    resultSet = validation.executeQuery();
                     if (resultSet.next()) {
                         Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setHeaderText(null);
@@ -92,9 +93,44 @@ public class UserCreateController implements Initializable {
                     }
                     resultSet.close();
                     validation.close();
+                } catch (SQLException e) {
+                    System.out.println(e.getMessage());
                 }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            }
+        } else {
+            if (nama_user.getText().isEmpty() || nis.getText().isEmpty() || nama_kelas.getValue() == null || password.getText().isEmpty() || role.getValue() == null) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("Kolom tidak boleh kosong !!");
+                alert.showAndWait();
+            } else {
+                try {
+                    var validation = connection.prepareStatement(validate);
+                    validation.setString(1, nis.getText());
+                    resultSet = validation.executeQuery();
+                    if (resultSet.next()) {
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setHeaderText(null);
+                        alert.setContentText("Nis yang anda masukkan telah terdaftar !!");
+                        alert.showAndWait();
+                    } else {
+                        preparedStatement = connection.prepareStatement(query);
+                        preparedStatement.setString(1, nama_user.getText());
+                        preparedStatement.setString(2, nis.getText());
+                        preparedStatement.setString(3, nama_kelas.getValue());
+                        preparedStatement.setString(4, password.getText());
+                        preparedStatement.setString(5, role.getValue());
+                        preparedStatement.execute();
+                        preparedStatement.close();
+                        connection.close();
+                        main.changeScene("data/user_data.fxml");
+                    }
+                    resultSet.close();
+                    validation.close();
+                } catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
         }
     }
 

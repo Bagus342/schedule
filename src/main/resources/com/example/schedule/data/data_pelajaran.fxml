@@ -32,6 +32,7 @@
                         <MenuItem mnemonicParsing="false" onAction="#jadwalScene" style="-fx-font-weight: bold; -fx-pref-width: 230; -fx-pref-height: 30; -fx-font-size: 15;" text="Data Jadwal" />
                         <MenuItem mnemonicParsing="false" onAction="#userScene" style="-fx-font-weight: bold; -fx-pref-width: 230; -fx-pref-height: 30; -fx-font-size: 15;" text="Data User" />
                         <MenuItem mnemonicParsing="false" onAction="#guruScene" style="-fx-font-weight: bold; -fx-pref-width: 230; -fx-pref-height: 30; -fx-font-size: 15;" text="Data Guru" />
+                        <MenuItem mnemonicParsing="false" onAction="#jurusanScene" style="-fx-font-weight: bold; -fx-pref-width: 230; -fx-pref-height: 30; -fx-font-size: 15;" text="Data Jurusan" />
                         <MenuItem mnemonicParsing="false" onAction="#kelasScene" style="-fx-font-weight: bold; -fx-pref-width: 230; -fx-pref-height: 30; -fx-font-size: 15;" text="Data Kelas" />
                         <MenuItem mnemonicParsing="false" onAction="#ruanganScene" style="-fx-font-weight: bold; -fx-pref-width: 230; -fx-pref-height: 30; -fx-font-size: 15;" text="Data Ruangan" />
                     </items>

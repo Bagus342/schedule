@@ -39,7 +39,7 @@
                         </TextField>
                     </children>
                     <VBox.margin>
-                        <Insets top="235.0" />
+                        <Insets top="280.0" />
                     </VBox.margin>
                 </HBox>
                 <HBox layoutX="10.0" layoutY="270.0" prefHeight="54.0" prefWidth="1548.0">
@@ -62,29 +62,9 @@
                         <Insets top="25.0" />
                     </VBox.margin>
                 </HBox>
-                <HBox layoutX="10.0" layoutY="40.0" prefHeight="54.0" prefWidth="1548.0">
-                    <children>
-                        <Label prefHeight="59.0" prefWidth="150.0" text="Mata Pelajaran">
-                            <font>
-                                <Font size="22.0" />
-                            </font>
-                            <HBox.margin>
-                                <Insets left="150.0" />
-                            </HBox.margin>
-                        </Label>
-                        <ComboBox fx:id="mapel" prefWidth="1000.0" promptText="Mata Pelajaran" style="-fx-background-color: #FFFF; -fx-font-size: 17; -fx-border-color: grey; -fx-border-width: 0 0 2 0;">
-                            <HBox.margin>
-                                <Insets left="50.0" top="7.0" />
-                            </HBox.margin>
-                        </ComboBox>
-                    </children>
-                    <VBox.margin>
-                        <Insets top="25.0" />
-                    </VBox.margin>
-                </HBox>
                 <HBox prefHeight="52.0" prefWidth="249.0">
                     <children>
-                        <Button fx:id="btn_submit" mnemonicParsing="false" onAction="#submitData" prefHeight="51.0" prefWidth="140.0" style="-fx-background-color: #0083B0 #0083B0; -fx-background-radius: 5;" text="Update" textFill="WHITE">
+                        <Button fx:id="btn_submit" mnemonicParsing="false" onAction="#submitData" prefHeight="51.0" prefWidth="140.0" style="-fx-background-color: #0083B0 #0083B0; -fx-background-radius: 5;" text="Tambah" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="17.0" />
                             </font>
@@ -102,7 +82,7 @@
                         </Button>
                     </children>
                     <VBox.margin>
-                        <Insets top="235.0" />
+                        <Insets top="260.0" />
                     </VBox.margin>
                 </HBox>
             </children>

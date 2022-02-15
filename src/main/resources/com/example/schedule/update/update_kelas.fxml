@@ -9,6 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="859.0" prefWidth="1547.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schedule.update.UpdateKelasController">
     <children>
         <Label layoutX="-1.0" prefHeight="80.0" prefWidth="1547.0" style="-fx-background-color: #FFFF;" text="Update Kelas">
@@ -31,7 +32,17 @@
                                 <Insets left="150.0" />
                             </HBox.margin>
                         </Label>
-                        <TextField fx:id="kelas" prefWidth="1000.0" style="-fx-background-color: #FFFF; -fx-font-size: 17; -fx-border-color: grey; -fx-border-width: 0 0 2 0;">
+                        <ComboBox fx:id="no_kelas" prefHeight="40.0" prefWidth="294.0" promptText="Kelas" style="-fx-background-color: #FFFF; -fx-font-size: 17; -fx-border-color: grey; -fx-border-width: 0 0 2 0;">
+                            <HBox.margin>
+                                <Insets left="50.0" top="7.0" />
+                            </HBox.margin>
+                        </ComboBox>
+                        <ComboBox fx:id="jurusan" prefHeight="40.0" prefWidth="505.0" promptText="Jurusan" style="-fx-background-color: #FFFF; -fx-font-size: 17; -fx-border-color: grey; -fx-border-width: 0 0 2 0;">
+                            <HBox.margin>
+                                <Insets left="50.0" top="7.0" />
+                            </HBox.margin>
+                        </ComboBox>
+                        <TextField fx:id="abjad_kelas" prefHeight="40.0" prefWidth="89.0" style="-fx-background-color: #FFFF; -fx-font-size: 17; -fx-border-color: grey; -fx-border-width: 0 0 2 0;">
                             <HBox.margin>
                                 <Insets left="50.0" top="7.0" />
                             </HBox.margin>

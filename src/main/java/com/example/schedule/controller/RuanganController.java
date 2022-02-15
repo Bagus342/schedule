@@ -222,6 +222,11 @@ public class RuanganController implements Initializable {
         main.changeScene("data/data_guru.fxml");
     }
 
+    public void jurusanScene(ActionEvent event) throws IOException {
+        Main main = new Main();
+        main.changeScene("data/data_jurusan.fxml");
+    }
+
     public void userScene(ActionEvent event) throws IOException {
         Main main = new Main();
         main.changeScene("data/user_data.fxml");

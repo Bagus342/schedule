@@ -213,6 +213,11 @@ public class KelasController implements Initializable {
         main.changeScene("data/schedule_management.fxml");
     }
 
+    public void jurusanScene(ActionEvent event) throws IOException {
+        Main main = new Main();
+        main.changeScene("data/data_jurusan.fxml");
+    }
+
     public void pelajaranScene(ActionEvent event) throws IOException {
         Main main = new Main();
         main.changeScene("data/data_pelajaran.fxml");

@@ -19,7 +19,6 @@ public class HandleGuru {
         preferences.put("id", guru.id_guru);
         preferences.put("guru", guru.nama_guru);
         preferences.put("kode", guru.kode_guru);
-        preferences.put("mapel", guru.mapel);
     }
 
     public static Guru getUpdateGuru() {
@@ -27,8 +26,7 @@ public class HandleGuru {
         var id = preferences.get("id", "String");
         var guru = preferences.get("guru", "String");
         var kode = preferences.get("kode", "String");
-        var mapel = preferences.get("mapel", "String");
-        return new Guru(id, guru, kode, mapel);
+        return new Guru(id, guru, kode);
     }
 
     public boolean checkValidation(String kode, String id) {

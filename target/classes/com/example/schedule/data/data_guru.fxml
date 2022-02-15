@@ -32,6 +32,7 @@
                         <MenuItem mnemonicParsing="false" onAction="#jadwalScene" style="-fx-font-weight: bold; -fx-pref-width: 230; -fx-pref-height: 30; -fx-font-size: 15;" text="Data Jadwal" />
                         <MenuItem mnemonicParsing="false" onAction="#userScene" style="-fx-font-weight: bold; -fx-pref-width: 230; -fx-pref-height: 30; -fx-font-size: 15;" text="Data User" />
                         <MenuItem mnemonicParsing="false" onAction="#pelajaranScene" style="-fx-font-weight: bold; -fx-pref-width: 230; -fx-pref-height: 30; -fx-font-size: 15;" text="Data Pelajaran" />
+                        <MenuItem mnemonicParsing="false" onAction="#jurusanScene" style="-fx-font-weight: bold; -fx-pref-width: 230; -fx-pref-height: 30; -fx-font-size: 15;" text="Data Jurusan" />
                         <MenuItem mnemonicParsing="false" onAction="#kelasScene" style="-fx-font-weight: bold; -fx-pref-width: 230; -fx-pref-height: 30; -fx-font-size: 15;" text="Data Kelas" />
                         <MenuItem mnemonicParsing="false" onAction="#ruanganScene" style="-fx-font-weight: bold; -fx-pref-width: 230; -fx-pref-height: 30; -fx-font-size: 15;" text="Data Ruangan" />
                     </items>
@@ -81,8 +82,7 @@
             <columns>
                 <TableColumn fx:id="id" prefWidth="75.0" text="id" visible="false" />
                 <TableColumn fx:id="guruColumn" prefWidth="447.9999450445175" style="-fx-color: white; -fx-alignment: center;" text="Nama Guru" />
-            <TableColumn fx:id="kodeColumn" prefWidth="75.0" style="-fx-color: white; -fx-alignment: center;" text="Kode Guru" />
-                <TableColumn fx:id="mapelColumn" prefWidth="447.9999450445175" style="-fx-color: white; -fx-alignment: center;" text="Mata Pelajaran" />
+                <TableColumn fx:id="kodeColumn" prefWidth="75.0" style="-fx-color: white; -fx-alignment: center;" text="Kode Guru" />
                 <TableColumn fx:id="actionColumn" prefWidth="209.599853515625" style="-fx-color: white;" text="Action" />
             </columns>
             <columnResizePolicy>

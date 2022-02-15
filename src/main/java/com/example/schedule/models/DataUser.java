@@ -23,6 +23,7 @@ public class DataUser {
     public void setid(String id) {
         this.id = id;
     }
+
     public String getNama_user() {
         return nama_user;
     }

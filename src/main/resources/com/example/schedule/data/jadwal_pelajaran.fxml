@@ -4,7 +4,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
@@ -19,7 +20,7 @@
                   <Insets left="30.0" />
                </HBox.margin>
                <children>
-                  <Label fx:id="nama_user" text="Bagus Rama Maulana">
+                  <Label fx:id="nama_user">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
@@ -27,7 +28,7 @@
                         <Insets top="21.0" />
                      </VBox.margin>
                   </Label>
-                  <Label fx:id="kelas" text="XII-RPL-C">
+                  <Label fx:id="kelas">
                      <font>
                         <Font name="System Bold" size="19.0" />
                      </font>
@@ -51,106 +52,37 @@
                   <Font name="System Bold" size="22.0" />
                </font>
             </Label>
-            <Label alignment="CENTER" prefHeight="78.0" prefWidth="58.0" text="Kelas">
+            <Label alignment="CENTER" prefHeight="78.0" prefWidth="58.0" text="Filter">
                <font>
                   <Font size="19.0" />
                </font>
                <HBox.margin>
-                  <Insets left="830.0" />
+                  <Insets left="800.0" />
                </HBox.margin>
             </Label>
-            <ComboBox fx:id="number_class" prefHeight="39.0" prefWidth="80.0" promptText="X" style="-fx-background-color: #FFFF; -fx-border-color: gray; -fx-border-width: 1; -fx-border-radius: 5; -fx-font-size: 16;">
+            <ComboBox fx:id="hari" prefHeight="39.0" prefWidth="143.0" promptText="Hari" style="-fx-background-color: #FFFF; -fx-border-color: gray; -fx-border-width: 1; -fx-border-radius: 5; -fx-font-size: 16;">
                <HBox.margin>
                   <Insets left="10.0" top="21.0" />
                </HBox.margin>
             </ComboBox>
-            <ComboBox fx:id="name_class" prefHeight="39.0" prefWidth="200.0" promptText="Nama Kelas" style="-fx-background-color: #FFFF; -fx-border-color: gray; -fx-border-width: 1; -fx-border-radius: 5; -fx-font-size: 16;">
+            <ComboBox fx:id="filter_kelas" onAction="#setKelas" prefHeight="39.0" prefWidth="246.0" promptText="Nama Kelas" style="-fx-background-color: #FFFF; -fx-border-color: gray; -fx-border-width: 1; -fx-border-radius: 5; -fx-font-size: 16;">
                <HBox.margin>
                   <Insets left="10.0" top="21.0" />
                </HBox.margin>
             </ComboBox>
-            <Button fx:id="btn_search" mnemonicParsing="false" prefHeight="39.0" prefWidth="72.0" style="-fx-background-color: #0083B0;" text="Cari" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="10.0" top="21.0" />
-               </HBox.margin>
-            </Button>
          </children>
       </HBox>
-      <HBox alignment="CENTER_LEFT" layoutY="185.0" prefHeight="73.0" prefWidth="1543.0" style="-fx-background-color: #383838;">
-         <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="150.0" text="HARI" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="23.0" />
-               </HBox.margin>
-            </Label>
-            <Label alignment="CENTER" prefHeight="27.0" prefWidth="280.0" text="MATA PELAJARAN" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="23.0" />
-               </HBox.margin>
-            </Label>
-            <Label alignment="CENTER" prefWidth="400.0" text="NAMA GURU" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="23.0" />
-               </HBox.margin>
-            </Label>
-            <Label alignment="CENTER" prefWidth="150.0" text="KELAS" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="23.0" />
-               </HBox.margin>
-            </Label>
-            <Label alignment="CENTER" prefWidth="80.0" text="JAM MULAI" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="23.0" />
-               </HBox.margin>
-            </Label>
-            <Label alignment="CENTER" prefWidth="85.0" text="JAM SELESAI" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS" wrapText="true">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="23.0" />
-               </HBox.margin>
-            </Label>
-            <Label alignment="CENTER" prefWidth="185.0" text="RUANGAN" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="23.0" />
-               </HBox.margin>
-            </Label>
-         </children>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-      </HBox>
-      <ScrollPane layoutX="-2.0" layoutY="259.0" prefHeight="578.0" prefWidth="1537.0">
-         <content>
-            <VBox fx:id="items" alignment="CENTER_LEFT" prefHeight="584.0" prefWidth="1530.0">
-               <padding>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </padding>
-
-            </VBox>
-         </content>
-      </ScrollPane>
+      <TableView fx:id="jadwalTable" layoutY="182.0" prefHeight="667.0" prefWidth="1546.0" style="-fx-font-size: 17; -fx-background-color: #FFFF;">
+         <columns>
+            <TableColumn fx:id="id" prefWidth="75.0" text="id" visible="false" />
+            <TableColumn fx:id="hariColumn" prefWidth="176.80005490779877" style="-fx-color: white; -fx-alignment: center;" text="Hari" />
+            <TableColumn fx:id="mapelColumn" minWidth="1.5999755859375" prefWidth="339.1999816894531" style="-fx-color: white; -fx-alignment: center;" text="Mata Pelajaran" />
+            <TableColumn fx:id="guruColumn" prefWidth="364.0" style="-fx-color: white; -fx-alignment: center;" text="Nama Guru" />
+            <TableColumn fx:id="kelasColumn" prefWidth="153.5999755859375" style="-fx-color: white; -fx-alignment: center;" text="Kelas" />
+            <TableColumn fx:id="mulaiColumn" maxWidth="304.0" prefWidth="240.8001708984375" style="-fx-color: white; -fx-alignment: center;" text="Jam Mulai" />
+            <TableColumn fx:id="selesaiColumn" maxWidth="318.4000244140625" prefWidth="97.5999755859375" style="-fx-color: white; -fx-alignment: center;" text="Jam Selesai" />
+            <TableColumn fx:id="ruanganColumn" maxWidth="430.400146484375" prefWidth="165.60009765625" style="-fx-color: white; -fx-alignment: center;" text="Ruangan" />
+         </columns>
+      </TableView>
    </children>
 </Pane>

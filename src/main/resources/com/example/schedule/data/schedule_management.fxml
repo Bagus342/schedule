@@ -32,6 +32,7 @@
                         <MenuItem mnemonicParsing="false" onAction="#userScene" style="-fx-font-weight: bold; -fx-pref-width: 230; -fx-pref-height: 30; -fx-font-size: 15;" text="Data User" />
                         <MenuItem mnemonicParsing="false" onAction="#guruScene" style="-fx-font-weight: bold; -fx-pref-width: 230; -fx-pref-height: 30; -fx-font-size: 15;" text="Data Guru" />
                         <MenuItem mnemonicParsing="false" onAction="#pelajaranScene" style="-fx-font-weight: bold; -fx-pref-width: 230; -fx-pref-height: 30; -fx-font-size: 15;" text="Data Pelajaran" />
+                        <MenuItem mnemonicParsing="false" onAction="#jurusanScene" style="-fx-font-weight: bold; -fx-pref-width: 230; -fx-pref-height: 30; -fx-font-size: 15;" text="Data Jurusan" />
                         <MenuItem mnemonicParsing="false" onAction="#kelasScene" style="-fx-font-weight: bold; -fx-pref-width: 230; -fx-pref-height: 30; -fx-font-size: 15;" text="Data Kelas" />
                         <MenuItem mnemonicParsing="false" onAction="#ruanganScene" style="-fx-font-weight: bold; -fx-pref-width: 230; -fx-pref-height: 30; -fx-font-size: 15;" text="Data Ruangan" />
                     </items>
@@ -77,10 +78,10 @@
                 </TextField>
             </children>
         </HBox>
-        <TableView fx:id="userTable" layoutY="180.0" prefHeight="667.0" prefWidth="1546.0" style="-fx-font-size: 17; -fx-background-color: #FFFF;">
+        <TableView fx:id="jadwalTable" layoutY="180.0" prefHeight="667.0" prefWidth="1546.0" style="-fx-font-size: 17; -fx-background-color: #FFFF;">
             <columns>
                 <TableColumn fx:id="id" prefWidth="75.0" text="id" visible="false" />
-                <TableColumn fx:id="hariColumn" prefWidth="176.80005490779877" text="Hari" />
+                <TableColumn fx:id="hariColumn" prefWidth="176.80005490779877" text="Hari" style="-fx-color: white; -fx-alignment: center;" />
                 <TableColumn fx:id="mapelColumn" minWidth="1.5999755859375" prefWidth="339.1999816894531" style="-fx-color: white; -fx-alignment: center;" text="Mata Pelajaran" />
                 <TableColumn fx:id="guruColumn" prefWidth="364.0" style="-fx-color: white; -fx-alignment: center;" text="Nama Guru" />
                 <TableColumn fx:id="kelasColumn" prefWidth="131.9998779296875" style="-fx-color: white; -fx-alignment: center;" text="Kelas" />

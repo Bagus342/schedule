@@ -52,9 +52,6 @@ public class GuruController implements Initializable {
     public TableColumn<Guru, String> kodeColumn;
 
     @FXML
-    public TableColumn<Guru, String> mapelColumn;
-
-    @FXML
     public TableColumn<Guru, String> actionColumn;
 
     @FXML
@@ -75,7 +72,7 @@ public class GuruController implements Initializable {
 
                 if (productGuru.getNama_guru().toLowerCase().indexOf(keyword) > -1) {
                     return true;
-                } else if (productGuru.getMapel().toLowerCase().indexOf(keyword) > -1) {
+                } else if (productGuru.getKode_guru().toLowerCase().indexOf(keyword) > -1) {
                     return true;
                 } else {
                     return false;
@@ -95,7 +92,6 @@ public class GuruController implements Initializable {
         id.setCellValueFactory(new PropertyValueFactory<>("id_guru"));
         guruColumn.setCellValueFactory(new PropertyValueFactory<>("nama_guru"));
         kodeColumn.setCellValueFactory(new PropertyValueFactory<>("kode_guru"));
-        mapelColumn.setCellValueFactory(new PropertyValueFactory<>("mapel"));
 
         FilteredList<Guru> filteredList = new FilteredList<>(dataList, e -> true);
 
@@ -108,7 +104,7 @@ public class GuruController implements Initializable {
 
                 if (productGuru.getNama_guru().toLowerCase().indexOf(keyword) > -1) {
                     return true;
-                } else if (productGuru.getMapel().toLowerCase().indexOf(keyword) > -1) {
+                } else if (productGuru.getKode_guru().toLowerCase().indexOf(keyword) > -1) {
                     return true;
                 } else {
                     return false;
@@ -163,7 +159,7 @@ public class GuruController implements Initializable {
                             try {
                                 Main main = new Main();
                                 HandleGuru handle = new HandleGuru();
-                                Guru data = new Guru(guru.getId_guru(), guru.getNama_guru(), guru.getKode_guru(), guru.getMapel());
+                                Guru data = new Guru(guru.getId_guru(), guru.getNama_guru(), guru.getKode_guru());
                                 handle.setUpdateGuru(data);
                                 main.changeScene("update/update_guru.fxml");
                             } catch (IOException ex) {
@@ -202,8 +198,7 @@ public class GuruController implements Initializable {
                 dataList.add(new Guru(
                         resultSet.getString("id_guru"),
                         resultSet.getString("nama_guru"),
-                        resultSet.getString("kode_guru"),
-                        resultSet.getString("mapel")
+                        resultSet.getString("kode_guru")
                 ));
                 guruTable.setItems(dataList);
             }
@@ -225,6 +220,11 @@ public class GuruController implements Initializable {
     public void pelajaranScene(ActionEvent event) throws IOException {
         Main main = new Main();
         main.changeScene("data/data_pelajaran.fxml");
+    }
+
+    public void jurusanScene(ActionEvent event) throws IOException {
+        Main main = new Main();
+        main.changeScene("data/data_jurusan.fxml");
     }
 
     public void kelasScene(ActionEvent event) throws IOException {

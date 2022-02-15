@@ -33,11 +33,6 @@ public class UpdateGuruController implements Initializable {
     @FXML
     public TextField kode = new TextField();
 
-    @FXML
-    public ComboBox<String> mapel = new ComboBox<>();
-
-    ObservableList<String> mapelItem = FXCollections.observableArrayList();
-
     public void numericText() {
         kode.textProperty().addListener(new ChangeListener<String>() {
             @Override
@@ -49,31 +44,15 @@ public class UpdateGuruController implements Initializable {
         });
     }
 
-    public void addMapel() {
-        connection = SqliteConnection.Connector();
-        String query = "select * from tb_mapel";
-        try {
-            preparedStatement = connection.prepareStatement(query);
-            resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                mapelItem.add(resultSet.getString("nama_mapel"));
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        mapel.setItems(mapelItem);
-    }
-
     public void updateQuery(){
         connection = SqliteConnection.Connector();
-        String query = "update tb_guru set nama_guru = ?, kode_guru = ?, mapel = ? where id_guru = ?";
+        String query = "update tb_guru set nama_guru = ?, kode_guru = ? where id_guru = ?";
         var id = HandleGuru.getUpdateGuru();
         try {
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, guru.getText());
             preparedStatement.setString(2, kode.getText());
-            preparedStatement.setString(3, mapel.getValue());
-            preparedStatement.setString(4, id.id_guru);
+            preparedStatement.setString(3, id.id_guru);
             preparedStatement.execute();
             preparedStatement.close();
             connection.close();
@@ -88,7 +67,7 @@ public class UpdateGuruController implements Initializable {
         var id = HandleGuru.getUpdateGuru();
         HandleGuru validation = new HandleGuru();
         try {
-            if (guru.getText().isEmpty() || kode.getText().isEmpty() || mapel.getValue() == null) {
+            if (guru.getText().isEmpty() || kode.getText().isEmpty()) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText(null);
                 alert.setContentText("Kolom tidak boleh kosong !!");
@@ -98,7 +77,6 @@ public class UpdateGuruController implements Initializable {
                         var data = HandleGuru.getUpdateGuru();
                         guru.setText(data.nama_guru);
                         kode.setText(data.kode_guru);
-                        mapel.setValue(data.mapel);
                     }
                 });
             } else {
@@ -115,7 +93,6 @@ public class UpdateGuruController implements Initializable {
                             var data = HandleGuru.getUpdateGuru();
                             guru.setText(data.nama_guru);
                             kode.setText(data.kode_guru);
-                            mapel.setValue(data.mapel);
                         }
                     });
                 }
@@ -133,11 +110,9 @@ public class UpdateGuruController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        this.addMapel();
         this.numericText();
         var data = HandleGuru.getUpdateGuru();
         guru.setText(data.nama_guru);
         kode.setText(data.kode_guru);
-        mapel.setValue(data.mapel);
     }
 }

@@ -5,13 +5,11 @@ public class Guru {
     public String id_guru;
     public String nama_guru;
     public String kode_guru;
-    public String mapel;
 
-    public Guru(String id, String guru,String kode, String pelajaran) {
+    public Guru(String id, String guru,String kode) {
         this.id_guru = id;
         this.nama_guru = guru;
         this.kode_guru = kode;
-        this.mapel = pelajaran;
     }
 
     public String getId_guru() {
@@ -36,14 +34,6 @@ public class Guru {
 
     public void setKode_guru(String kode) {
         this.kode_guru = kode;
-    }
-
-    public String getMapel() {
-        return mapel;
-    }
-
-    public void setMapel(String pelajaran) {
-        this.mapel = pelajaran;
     }
 
 }
